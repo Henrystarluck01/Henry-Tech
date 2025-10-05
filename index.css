@@ -200,7 +200,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  gap: 3rem;
+  gap: 1rem;
   width: 100%;
   flex-wrap: wrap;
   overflow: auto;
@@ -251,7 +251,7 @@
     } 
 
       .home-content{
-  margin-left: 3rem;
+  margin-left: 1%;
   max-width: 400px;
   width: 100%;
   flex: 1 1 300px;
@@ -342,12 +342,33 @@
 
       }
   .services-details{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+  @media (min-width: 900px) {
+    .services-details {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .services-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      justify-items: center;
+    }
+    .services-details .services-box {
+      max-width: 100%;
+      width: 100%;
+    }
   }
   .services-details .services-box{
   flex: 1 1 30rem;
