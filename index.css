@@ -254,7 +254,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: space-evenly;
-    gap: 0.8rem;
+    gap: 10px;
   }
   .home-content, .home-image {
     max-width: 100%;
