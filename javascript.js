@@ -45,4 +45,45 @@ document.addEventListener('DOMContentLoaded', function() {
       setTheme(!document.documentElement.classList.contains('dark-theme'));
     });
   }
+  // Typing effect for .skills
+  const skillsElement = document.querySelector('.skills');
+  if (skillsElement) {
+    const skills = [
+      'Ethical Hacking',
+      'Cyber Security',
+      'fullstack web development',
+      'digital forensics',      
+    ];
+    let skillIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typeSpeed = 80;
+    const backSpeed = 80;
+    const backDelay = 1200;
+    function typeSkill() {
+      const currentSkill = skills[skillIndex];
+      if (!isDeleting) {
+        skillsElement.textContent = currentSkill.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentSkill.length) {
+          isDeleting = true;
+          setTimeout(typeSkill, backDelay);
+        } else {
+          setTimeout(typeSkill, typeSpeed);
+        }
+      } else {
+        skillsElement.textContent = currentSkill.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          skillIndex = (skillIndex + 1) % skills.length;
+          setTimeout(typeSkill, typeSpeed);
+        } else {
+          setTimeout(typeSkill, backSpeed);
+        }
+      }
+    }
+    // Start typing effect
+    typeSkill();
+  }
 });
