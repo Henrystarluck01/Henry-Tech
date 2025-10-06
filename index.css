@@ -1,3 +1,28 @@
+
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: black;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 5x;
+    padding: 20px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: none;
+    gap: 5px;
+    z-index: 1000;
+  }
+  .nav.active {
+    display: flex;
+    gap: 32px;
+  }
+  #menu-toggle {
+    display: flex;
+  }
+}
 @keyframes slideDownFadeIn {
   0% {
     opacity: 0;
@@ -9,7 +34,7 @@
   }
 }
 .home-content {
-  /* ...existing styles... */
+    gap: 32px !important; /* Adjusted spacing between nav links */
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -168,7 +193,6 @@
 
 /* Responsive Navigation Styles */
 #menu-toggle {
-  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -230,7 +254,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: space-evenly;
-    gap: 2rem;
+    gap: 0.8rem;
   }
   .home-content, .home-image {
     max-width: 100%;
